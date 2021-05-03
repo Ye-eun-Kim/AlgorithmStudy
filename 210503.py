@@ -1,41 +1,16 @@
 def solution(scoville, K):
+    import heapq
 
     cnt = 0
-    ##scoville 정렬
-    scoville.sort()
-    ##스코빌 지수가 K 미만인 요소의 최대 index 구하기 -> n == K 미만인 요소 개수
-    start = 0
-    end = len(scoville)-1
-    while start <= end :
-        mid = (start+end)//2
-        if scoville[mid] < K :
-            start = mid+1
-        elif scoville[mid] > K :
-            end = mid -1
-        elif scoville[mid] == K :
-            end=mid
-            break
-    n = end
 
-    ##n==1
-    while n!=0 :
-        if n==1 :
-            return cnt+1
-        else :
-            temp = scoville.pop(0)+scoville.pop(0)*2
+    heapq.heapify(scoville)
+    while scoville[0]<K :
+        if len(scoville)>1:
+            heapq.heappush(scoville, heapq.heappop(scoville)+(heapq.heappop(scoville)*2))
             cnt+=1
-            scoville.append(temp)
-            scoville.sort()
-            if temp >= K :
-                if n==2 :
-                    return cnt
-                else :
-                    n-=2
-            elif temp < K :
-                if n==2 :
-                    return cnt+1
-                else :
-                    n-=1
+        elif len(scoville)<=1 :
+            break
+
     return cnt
 
 scoville = [1, 2, 3, 9, 10, 12]
