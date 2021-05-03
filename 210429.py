@@ -7,3 +7,20 @@ numbers의 배열을 바꾼 뒤 문자열로 출력
 2차원에서 (첫째 자리수)보다 그 뒷자리수가 큰대로 배열됨. 
 
 '''
+def solution(numbers):
+    num = [][]
+    for number in numbers:
+        if number == 1000:
+            num[1].append(number)
+        else:
+            k=number%100
+            if k!=0:
+                while num[k]:
+                    num[k].append(number)
+            else:
+                k=number%10
+            
+            
+
+    answer = ''
+    return answer

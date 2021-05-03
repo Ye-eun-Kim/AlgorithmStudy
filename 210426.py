@@ -17,7 +17,7 @@ def solution(bridge_length, weight, truck_weights):
         time += 1
         
         ## 두 번째 차부터, truck_weights 전부 넣기.
-        while truck_weights :
+        while truck_weight :
             
             if (sum+truck_weights[0]) <= weight :
                 on.append(truck_weights.pop(0))
