@@ -1,5 +1,4 @@
 def solution(scoville, K):
-    from collections import deque
 
     cnt = 0
     ##scoville 정렬
@@ -23,13 +22,9 @@ def solution(scoville, K):
         if n==1 :
             return cnt+1
         else :
-            dq=deque(scoville)
-            temp = dq[0]+dq[1]*2
+            temp = scoville.pop(0)+scoville.pop(0)*2
             cnt+=1
-            dq.append(temp)
-            dq.popleft()
-            dq.popleft()
-            scoville = list(dq)
+            scoville.append(temp)
             scoville.sort()
             if temp >= K :
                 if n==2 :
