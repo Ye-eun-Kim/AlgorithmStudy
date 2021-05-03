@@ -31,5 +31,4 @@ print(result)
     '''
 
 
-    ''' 코드 참고: https://yurimkoo.github.io/algorithm/2019/09/26/more-spicy.html
-    왜 return -1인지 이유 모름 '''
+    ## 코드 참고: https://yurimkoo.github.io/algorithm/2019/09/26/more-spicy.html
