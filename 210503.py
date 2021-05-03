@@ -8,8 +8,8 @@ def solution(scoville, K):
         if len(scoville)>1:
             heapq.heappush(scoville, heapq.heappop(scoville)+(heapq.heappop(scoville)*2))
             cnt+=1
-        elif len(scoville)<=1 :
-            break
+        else:
+            return -1
 
     return cnt
 
@@ -29,3 +29,7 @@ print(result)
     -> 작으면 남은 것들과 정렬, 위 과정 반복.
     
     '''
+
+
+    ''' 코드 참고: https://yurimkoo.github.io/algorithm/2019/09/26/more-spicy.html
+    왜 return -1인지 이유 모름 '''
