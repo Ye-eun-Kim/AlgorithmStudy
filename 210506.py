@@ -10,6 +10,7 @@ def solution(numbers):
 
     cnt=0
     prime = []
+    
     num = list(numbers)
     for k in range (1, len(num)+1) :
         number = list(set(map(''.join, permutations(num, k))))
@@ -46,3 +47,17 @@ def solution(numbers):
 ##print(test)
 test = solution("3")
 print(test)
+
+'''
+<깔끔한 코드>
+from itertools import permutations
+def solution(n):
+    a = set()
+    for i in range(len(n)):
+        ## |: 합집합 연산자, -: 차집합 연산자
+        a |= set(map(int, map("".join, permutations(list(n), i + 1))))
+    a -= set(range(0, 2))
+    for i in range(2, int(max(a) ** 0.5) + 1):
+        a -= set(range(i * 2, max(a) + 1, i))
+    return len(a)
+    '''
