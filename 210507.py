@@ -6,13 +6,16 @@ def solution(citations):
     target = citations[l]
     remain = len(citations)-l-1
     while True :
-        if l == 0 :
-            return 0
+        
         if target == remain :
             return target
         elif target > remain :
             l-=1
             target = citations[l]
+            if l == 0 :
+                if citations[0] > remain :
+                    return len(citations)
+                
             if remain < len(citations)-1 :
                 remain+=1
                 if remain > target :
@@ -26,5 +29,5 @@ def solution(citations):
     
     
 
-a = solution([1,5,5,5,5])
+a = solution([10,50,100])
 print(a)
