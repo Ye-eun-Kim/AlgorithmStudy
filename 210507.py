@@ -1,7 +1,7 @@
 def solution(citations):
     
     citations.sort()
-    print("sorted: ",citations)
+    ## print("sorted: ",citations)
     l = len(citations)//2
     target = citations[l]
     remain = len(citations)-l-1
