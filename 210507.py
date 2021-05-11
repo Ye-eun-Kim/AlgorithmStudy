@@ -29,5 +29,5 @@ def solution(citations):
     
     
 
-a = solution([10,50,100])
-print(a)
+##a = solution([10,50,100])
+##print(a)
