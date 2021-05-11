@@ -7,6 +7,7 @@ def solution(s):
     if len(stack) == 0: return 1
     else: return 0 
 
+# 참고 코드 주소 : https://eda-ai-lab.tistory.com/492
 
 # def solution(string):
 #     answer = 0
