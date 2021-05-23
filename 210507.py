@@ -20,6 +20,7 @@ def solution(citations):
                 remain+=1
                 if remain > target :
                     return remain
+
         elif target < remain :
             l+=1
             target = citations[l]
